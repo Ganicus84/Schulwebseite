@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Bildschirmfoto.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .card {
+            position: relative;
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+        }
+        .info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .card:hover .info {
+            opacity: 1;
+        }
+        .info p {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 20px;
+        }
+        footer button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        footer button:hover {
+            background-color: #45a049;
+        }
+        .table-container {
+            display: none;
+            justify-content: center;
+            margin: 50px 0;
+            position: fixed;
+            bottom: 200px;
+            left: 200px;
+        }
+        .table {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #333;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+        }
+        .table .row {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+        .table .row:last-child {
+            border-bottom: none;
+        }
+        .table .cell {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .table .header {
+            font-weight: bold;
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        function toggleTable() {
+            const tableContainer = document.querySelector('.table-container');
+            tableContainer.style.display = tableContainer.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center; color: darkgreen;">Willkommen in der Jan-Valkenburg-Schule (Volks-und Realschule)</h1>
+    <div class="container">
+        <div class="card" onclick="location.href='https://mathe-lernen.net/'">
+            <img src="mathe.jpg" alt="Bild 1">
+            <div class="info">
+                <p>Hier lernen wir Mathematik.</p>
+            </div>
+        </div>
+        <div class="card" onclick="location.href='https://offenes-lernen.de/?page_id=2851'">
+            <img src="natur.jpg" alt="Bild 2">
+            <div class="info">
+                <p>Hier lernen wir Naturwissenschaften.</p>
+            </div>
+        </div>
+        <div class="card" onclick="location.href='https://www.wirlernenonline.de/portal/kunst-kunstverstehen/'">
+            <img src="kunst.jpg" alt="Bild 3">
+            <div class="info">
+                <p>Hier lernen wir Kunst.</p>
+            </div>
+        </div>
+        <div class="card" onclick="location.href='https://wirlernenonline.de/portal/geschichte/'">
+            <img src="history.jpg" alt="Bild 4">
+            <div class="info">
+                <p>Hier lernen wir Geschichte.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">Fach</div>
+                <div class="cell">Lehrer</div>
+                <div class="cell">Beschreibung</div>
+            </div>
+            <div class="row">
+                <div class="cell">Mathematik</div>
+                <div class="cell">Herr Kiel</div>
+                <div class="cell">Mathematik-Grundlagen und fortgeschrittene Konzepte.</div>
+            </div>
+            <div class="row">
+                <div class="cell">Naturwissenschaften</div>
+                <div class="cell">Frau Scheideweh</div>
+                <div class="cell">Biologie, Chemie und Physik.</div>
+            </div>
+            <div class="row">
+                <div class="cell">Kunst</div>
+                <div class="cell">Frau Busenbender</div>
+                <div class="cell">Kreatives Gestalten und Kunstgeschichte.</div>
+            </div>
+            <div class="row">
+                <div class="cell">Geschichte</div>
+                <div class="cell">Herr Baltasar Führer</div>
+                <div class="cell">Historische Ereignisse und deren Auswirkungen.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <button onclick="location.href='https://www.stayfriends.de/Schule/Hamburg/Hauptschule/Jan-Valkenburg-Schule-S-6TPE-S#'">Anmeldung</button>
+        <button onclick="toggleTable()">Fächer</button>
+        <button onclick="location.href='https://www.getyourguide.de/c/legal'">Impressum</button>
+        <button onclick="location.href='https://maps.app.goo.gl/H2XTkKH4k368DYpX6'">Kontakt</button>
+    </footer>
+</body>
+</html>
